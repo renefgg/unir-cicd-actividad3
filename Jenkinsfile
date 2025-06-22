@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Running Unit Tests...'
                 sh 'make test-unit'
-                archiveArtifacts artifacts: 'results/unit_result.xml'
+                archiveArtifacts artifacts: 'results/unit_result.*ml'
             }
         }
 
@@ -28,7 +28,7 @@ pipeline {
             steps {
                 echo 'Running API Tests...'
                 sh 'make test-api'
-                archiveArtifacts artifacts: 'results/api_result.xml'
+                archiveArtifacts artifacts: 'results/api_result.*ml'
             }
         }
 
