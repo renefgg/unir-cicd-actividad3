@@ -13,7 +13,6 @@ pipeline {
             steps {
                 echo 'Building Docker image...'
                 sh 'make build'
-                sh 'exit 1'
             }
         }
 
