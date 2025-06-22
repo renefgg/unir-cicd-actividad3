@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="4" hostname="0f55cb9ef3bb" name="pytest" skipped="0" tests="17" time="0.244" timestamp="2025-05-23T18:08:54.284738"><testcase classname="test.unit.calc_test.TestCalculate" name="test_add_method_fails_with_nan_parameter" time="0.001"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_add_method_returns_correct_result" time="0.000"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_divide_method_fails_with_division_by_zero" time="0.000"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_divide_method_fails_with_nan_parameter" time="0.000"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_divide_method_returns_correct_result" time="0.000"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_log10_invalid_parameter_raises_value_error" time="0.000"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_log10_method_returns_correct_result" time="0.000"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_log10_zero_parameter_raises_value_error" time="0.000"><failure message="TypeError: El logaritmo en base 10 solo está definido para números positivos">self = &lt;unit.calc_test.TestCalculate testMethod=test_log10_zero_parameter_raises_value_error&gt;
+
+    def test_log10_zero_parameter_raises_value_error(self):
+        with self.assertRaises(ValueError):
+&gt;           self.calc.log10(0)
+
+test/unit/calc_test.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def log10(self, x):
+        self.check_type(x)
+        if x &lt;= 0:
+&gt;           raise TypeError(&quot;El logaritmo en base 10 solo está definido para números positivos&quot;)
+E           TypeError: El logaritmo en base 10 solo está definido para números positivos
+
+app/calc.py:47: TypeError</failure></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_multiply_invalid_parameter_raises_value_error" time="0.000"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_multiply_method_returns_correct_result" time="0.001"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_power_invalid_parameter_raises_value_error" time="0.000"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_power_method_returns_correct_result" time="0.001"><failure message="TypeError: Parameters must be numbers">self = &lt;unit.calc_test.TestCalculate testMethod=test_power_method_returns_correct_result&gt;
+
+    def test_power_method_returns_correct_result(self):
+&gt;       self.assertEqual(4, self.calc.power(2, &quot;2&quot;))
+
+test/unit/calc_test.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app/calc.py:33: in power
+    self.check_types(x, y)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;app.calc.Calculator object at 0x787d0d172eb8&gt;, x = 2, y = &apos;2&apos;
+
+    def check_types(self, x, y):
+        if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+&gt;           raise TypeError(&quot;Parameters must be numbers&quot;)
+E           TypeError: Parameters must be numbers
+
+app/calc.py:57: TypeError</failure></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_sqrt_invalid_parameter_raises_value_error" time="0.000"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_sqrt_method_returns_correct_result" time="0.000"><failure message="TypeError: El parámetro debe ser un número">self = &lt;unit.calc_test.TestCalculate testMethod=test_sqrt_method_returns_correct_result&gt;
+
+    def test_sqrt_method_returns_correct_result(self):
+        self.assertEqual(2, self.calc.sqrt(4))
+        self.assertEqual(4, self.calc.sqrt(16))
+&gt;       self.assertEqual(8, self.calc.sqrt(&quot;64&quot;))
+
+test/unit/calc_test.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app/calc.py:39: in sqrt
+    self.check_type(x)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;app.calc.Calculator object at 0x787d0d4150b8&gt;, x = &apos;64&apos;
+
+    def check_type(self, x):
+        if not isinstance(x, (int, float)):
+&gt;           raise TypeError(&quot;El parámetro debe ser un número&quot;)
+E           TypeError: El parámetro debe ser un número
+
+app/calc.py:52: TypeError</failure></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_sqrt_negative_parameter_raises_value_error" time="0.001"><failure message="TypeError: No se puede calcular la raíz cuadrada de un número negativo">self = &lt;unit.calc_test.TestCalculate testMethod=test_sqrt_negative_parameter_raises_value_error&gt;
+
+    def test_sqrt_negative_parameter_raises_value_error(self):
+        with self.assertRaises(ValueError):
+&gt;           self.calc.sqrt(-1)
+
+test/unit/calc_test.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def sqrt(self, x):
+        self.check_type(x)
+        if x &lt; 0:
+&gt;           raise TypeError(&quot;No se puede calcular la raíz cuadrada de un número negativo&quot;)
+E           TypeError: No se puede calcular la raíz cuadrada de un número negativo
+
+app/calc.py:41: TypeError</failure></testcase><testcase classname="test.unit.util_test.TestUtil" name="test_convert_to_number_correct_param" time="0.001"></testcase><testcase classname="test.unit.util_test.TestUtil" name="test_convert_to_number_invalid_type" time="0.001"></testcase></testsuite></testsuites>

@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>unit_result.xml</title>
+    <style type="text/css">
+        body {
+    background-color: white;
+    padding-bottom: 20em;
+    margin: 0;
+    min-height: 15cm;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+    font-family: sans-serif;
+}
+
+h1 {
+    background-color: #007acc;
+    color: white;
+    padding: 3mm;
+    margin-top: 0;
+    margin-bottom: 1mm;
+}
+
+.footer {
+    font-style: italic;
+    font-size: small;
+    text-align: right;
+    padding: 1em;
+}
+
+.testsuite {
+    padding-bottom: 2em;
+    margin-left: 1em;
+}
+
+.proplist {
+    width: 100%;
+    margin-bottom: 2em;
+    border-collapse: collapse;
+    border: 1px solid grey;
+}
+
+.proplist th {
+    background-color: silver;
+    width: 5em;
+    padding: 2px;
+    padding-right: 1em;
+    text-align: left;
+}
+
+.proplist td {
+    padding: 2px;
+    word-break: break-all;
+}
+
+.index-table {
+    width: 90%;
+    margin-left: 1em;
+}
+
+.index-table td {
+    vertical-align: top;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+.failure-index {
+
+}
+
+.toc {
+    margin-bottom: 2em;
+    font-family: monospace;
+}
+
+.stdio, pre {
+    min-height: 1em;
+    background-color: #1e1e1e;
+    color: silver;
+    padding: 0.5em;
+}
+.tdpre {
+    background-color: #1e1e1e;
+}
+
+.test {
+    margin-left: 0.5cm;
+}
+
+.toc {
+    list-style: none;
+}
+
+.toc li.outcome {
+    list-style: none;
+}
+
+.toc li.outcome::before {
+    content: "\2022";
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    width: 1.27em;
+    margin-left: -1.27em;
+    font-size: 1.2em;
+}
+
+.toc li.outcome-failed {
+    background-color: lightcoral;
+}
+
+.toc li.outcome-failed::before {
+    color: red;
+}
+
+.toc li.outcome-passed::before {
+    color: green;
+}
+
+.toc li.outcome-skipped::before {
+    color: orange;
+}
+
+.testcases .outcome {
+    border-left: 1em;
+    padding: 2px;
+}
+
+.testcases .outcome-failed {
+    border-left: 1em solid lightcoral;
+}
+
+
+.outcome-passed {
+    border-left: 1em solid lightgreen;
+}
+
+.outcome-skipped {
+    border-left: 1em dotted silver;
+}
+
+.testcases .outcome-passed {
+    border-left: 1em solid lightgreen;
+}
+
+.testcases .outcome-skipped {
+    border-left: 1em solid #FED8B1;
+}
+
+.stats-table {
+}
+
+.stats-table td {
+    min-width: 4em;
+    text-align: right;
+}
+
+.stats-table .failed {
+    background-color: lightcoral;
+}
+
+.stats-table .passed {
+    background-color: lightgreen;
+}
+
+.matrix-table {
+    table-layout: fixed;
+    border-spacing: 0;
+    width: available;
+    margin-left: 1em;
+}
+
+.matrix-table td {
+    vertical-align: center;
+}
+
+.matrix-table td:last-child {
+    width: 0;
+}
+
+.matrix-table tr:hover {
+    background-color: yellow;
+}
+
+.matrix-axis-name {
+    white-space: nowrap;
+    padding-right: 0.5em;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    text-align: right;
+}
+
+.matrix-axis-line {
+    border-left: 1px solid black;
+    width: 0.5em;
+}
+
+.matrix-classname {
+    text-align: left;
+    width: 100%;
+    border-top: 2px solid grey;
+    border-bottom: 1px solid silver;
+}
+
+.matrix-casename {
+    text-align: left;
+    font-weight: normal;
+    font-style: italic;
+    padding-left: 1em;
+    border-bottom: 1px solid silver;
+}
+
+.matrix-result {
+    display: block;
+    width: 1em;
+    text-align: center;
+    padding: 1mm;
+    margin: 0;
+}
+
+.matrix-result-combined {
+    white-space: nowrap;
+    padding-right: 0.2em;
+    text-align: right;
+}
+
+.matrix-result-failed {
+    background-color: lightcoral;
+}
+
+.matrix-result-passed {
+    background-color: lightgreen;
+}
+
+.matrix-result-skipped {
+    background-color: lightyellow;
+}
+
+.matrix-even {
+    background-color: lightgray;
+}
+    </style>
+</head>
+<body>
+    
+<h1>
+    Test Report : unit_result.xml
+</h1>
+
+
+<a id="toc"></a>
+<table class="index-table">
+    <tr>
+        <td>
+            <ul class="toc">
+            
+                
+                <li>test.unit.calc_test.TestCalculate
+                <ul>
+                    
+                    <li class="outcome outcome-passed"><a href="#83eba05a-d0e6-40e1-a9a3-a9c98a734cdd">test_add_method_fails_with_nan_parameter</a></li>
+                    
+                    <li class="outcome outcome-passed"><a href="#8cccd984-9a36-4b16-8785-d1227e8a580c">test_add_method_returns_correct_result</a></li>
+                    
+                    <li class="outcome outcome-passed"><a href="#b6dfd807-7b1f-467b-993d-8bed7a69f439">test_divide_method_fails_with_division_by_zero</a></li>
+                    
+                    <li class="outcome outcome-passed"><a href="#4b0389d7-9243-4a73-9152-cb8bde691a72">test_divide_method_fails_with_nan_parameter</a></li>
+                    
+                    <li class="outcome outcome-passed"><a href="#5c1f2d08-9f4f-40d6-a921-64213ca7ef43">test_divide_method_returns_correct_result</a></li>
+                    
+                    <li class="outcome outcome-passed"><a href="#929f8e05-5eff-40d6-b231-ec26b0221831">test_log10_invalid_parameter_raises_value_error</a></li>
+                    
+                    <li class="outcome outcome-passed"><a href="#d4053eed-2f63-476a-88c9-2c9bd3c8ee0d">test_log10_method_returns_correct_result</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#dd667d7d-4359-4dda-bb7c-14eff5096652">test_log10_zero_parameter_raises_value_error</a></li>
+                    
+                    <li class="outcome outcome-passed"><a href="#34c8c3fc-e5eb-40c9-9644-0da917684b86">test_multiply_invalid_parameter_raises_value_error</a></li>
+                    
+                    <li class="outcome outcome-passed"><a href="#4dfa2570-55cd-4693-bd4b-21ebb022fde1">test_multiply_method_returns_correct_result</a></li>
+                    
+                    <li class="outcome outcome-passed"><a href="#bfd8e1db-b837-46d9-ab86-aa50b705c4d6">test_power_invalid_parameter_raises_value_error</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#64a67cc8-2f42-4c86-ad51-266e91d4484d">test_power_method_returns_correct_result</a></li>
+                    
+                    <li class="outcome outcome-passed"><a href="#cc33debc-38fd-4cb6-a388-ae5319108289">test_sqrt_invalid_parameter_raises_value_error</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#1142948a-15b1-4718-be7a-95a1a4927338">test_sqrt_method_returns_correct_result</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#e1f92c48-0f81-47f6-ac06-6565eac47e7b">test_sqrt_negative_parameter_raises_value_error</a></li>
+                    
+                </ul>
+                </li>
+                
+                <li>test.unit.util_test.TestUtil
+                <ul>
+                    
+                    <li class="outcome outcome-passed"><a href="#abcc0eeb-aff6-4fe1-bf5f-8d7c9145ffa8">test_convert_to_number_correct_param</a></li>
+                    
+                    <li class="outcome outcome-passed"><a href="#b155083d-bdb2-46da-918f-a8d08c836c38">test_convert_to_number_invalid_type</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+            </ul>
+        </td>
+        <td class="failure-index">
+            <ul class="toc">
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="#dd667d7d-4359-4dda-bb7c-14eff5096652">[F] test.unit.calc_test.TestCalculate : test_log10_zero_parameter_raises_value_error</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="#64a67cc8-2f42-4c86-ad51-266e91d4484d">[F] test.unit.calc_test.TestCalculate : test_power_method_returns_correct_result</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="#1142948a-15b1-4718-be7a-95a1a4927338">[F] test.unit.calc_test.TestCalculate : test_sqrt_method_returns_correct_result</a></li>
+                    
+                    
+                    
+                    <li><a href="#e1f92c48-0f81-47f6-ac06-6565eac47e7b">[F] test.unit.calc_test.TestCalculate : test_sqrt_negative_parameter_raises_value_error</a></li>
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                
+            
+            </ul>
+        </td>
+    </tr>
+</table>
+
+
+
+    <div class="testsuite">
+        <h2>Test Suite: pytest</h2>
+        <a id="a5a437a3-eac5-4774-9558-8730a74cad24"></a>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.244 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>17</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>4</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>test.unit.calc_test.TestCalculate</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="83eba05a-d0e6-40e1-a9a3-a9c98a734cdd"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_add_method_fails_with_nan_parameter</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.001 sec</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="8cccd984-9a36-4b16-8785-d1227e8a580c"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_add_method_returns_correct_result</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="b6dfd807-7b1f-467b-993d-8bed7a69f439"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_divide_method_fails_with_division_by_zero</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="4b0389d7-9243-4a73-9152-cb8bde691a72"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_divide_method_fails_with_nan_parameter</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="5c1f2d08-9f4f-40d6-a921-64213ca7ef43"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_divide_method_returns_correct_result</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="929f8e05-5eff-40d6-b231-ec26b0221831"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_log10_invalid_parameter_raises_value_error</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="d4053eed-2f63-476a-88c9-2c9bd3c8ee0d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_log10_method_returns_correct_result</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="dd667d7d-4359-4dda-bb7c-14eff5096652"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_log10_zero_parameter_raises_value_error</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>TypeError: El logaritmo en base 10 solo está definido para números positivos</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>self = &lt;unit.calc_test.TestCalculate testMethod=test_log10_zero_parameter_raises_value_error&gt;
+
+    def test_log10_zero_parameter_raises_value_error(self):
+        with self.assertRaises(ValueError):
+&gt;           self.calc.log10(0)
+
+test/unit/calc_test.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def log10(self, x):
+        self.check_type(x)
+        if x &lt;= 0:
+&gt;           raise TypeError(&#34;El logaritmo en base 10 solo está definido para números positivos&#34;)
+E           TypeError: El logaritmo en base 10 solo está definido para números positivos
+
+app/calc.py:47: TypeError</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="34c8c3fc-e5eb-40c9-9644-0da917684b86"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_multiply_invalid_parameter_raises_value_error</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="4dfa2570-55cd-4693-bd4b-21ebb022fde1"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_multiply_method_returns_correct_result</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.001 sec</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="bfd8e1db-b837-46d9-ab86-aa50b705c4d6"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_power_invalid_parameter_raises_value_error</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="64a67cc8-2f42-4c86-ad51-266e91d4484d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_power_method_returns_correct_result</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.001 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>TypeError: Parameters must be numbers</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>self = &lt;unit.calc_test.TestCalculate testMethod=test_power_method_returns_correct_result&gt;
+
+    def test_power_method_returns_correct_result(self):
+&gt;       self.assertEqual(4, self.calc.power(2, &#34;2&#34;))
+
+test/unit/calc_test.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app/calc.py:33: in power
+    self.check_types(x, y)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;app.calc.Calculator object at 0x787d0d172eb8&gt;, x = 2, y = &#39;2&#39;
+
+    def check_types(self, x, y):
+        if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+&gt;           raise TypeError(&#34;Parameters must be numbers&#34;)
+E           TypeError: Parameters must be numbers
+
+app/calc.py:57: TypeError</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="cc33debc-38fd-4cb6-a388-ae5319108289"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_sqrt_invalid_parameter_raises_value_error</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="1142948a-15b1-4718-be7a-95a1a4927338"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_sqrt_method_returns_correct_result</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>TypeError: El parámetro debe ser un número</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>self = &lt;unit.calc_test.TestCalculate testMethod=test_sqrt_method_returns_correct_result&gt;
+
+    def test_sqrt_method_returns_correct_result(self):
+        self.assertEqual(2, self.calc.sqrt(4))
+        self.assertEqual(4, self.calc.sqrt(16))
+&gt;       self.assertEqual(8, self.calc.sqrt(&#34;64&#34;))
+
+test/unit/calc_test.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app/calc.py:39: in sqrt
+    self.check_type(x)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;app.calc.Calculator object at 0x787d0d4150b8&gt;, x = &#39;64&#39;
+
+    def check_type(self, x):
+        if not isinstance(x, (int, float)):
+&gt;           raise TypeError(&#34;El parámetro debe ser un número&#34;)
+E           TypeError: El parámetro debe ser un número
+
+app/calc.py:52: TypeError</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="e1f92c48-0f81-47f6-ac06-6565eac47e7b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_sqrt_negative_parameter_raises_value_error</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.001 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>TypeError: No se puede calcular la raíz cuadrada de un número negativo</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>self = &lt;unit.calc_test.TestCalculate testMethod=test_sqrt_negative_parameter_raises_value_error&gt;
+
+    def test_sqrt_negative_parameter_raises_value_error(self):
+        with self.assertRaises(ValueError):
+&gt;           self.calc.sqrt(-1)
+
+test/unit/calc_test.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def sqrt(self, x):
+        self.check_type(x)
+        if x &lt; 0:
+&gt;           raise TypeError(&#34;No se puede calcular la raíz cuadrada de un número negativo&#34;)
+E           TypeError: No se puede calcular la raíz cuadrada de un número negativo
+
+app/calc.py:41: TypeError</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+            <div class="testclass">
+                <h4>test.unit.util_test.TestUtil</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="abcc0eeb-aff6-4fe1-bf5f-8d7c9145ffa8"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_convert_to_number_correct_param</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.001 sec</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="b155083d-bdb2-46da-918f-a8d08c836c38"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>test_convert_to_number_invalid_type</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.001 sec</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+
+
+<p class="footer">
+    Generated by junit2html
+</p>
+</body>
+</html>

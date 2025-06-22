@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="3.0170000000000003" tests="6" failures="0" skipped="1">
+  <testsuite name="Root Suite" timestamp="2025-05-22T05:09:44" tests="0" file="cypress/integration/calc.spec.js" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Calc" timestamp="2025-05-22T05:09:45" tests="6" failures="0" time="3.0170000000000003">
+    <testcase name="Calc get the title" time="0.274" classname="get the title">
+    </testcase>
+    <testcase name="Calc can type operands" time="0.541" classname="can type operands">
+    </testcase>
+    <testcase name="Calc can click add" time="0.849" classname="can click add">
+    </testcase>
+    <testcase name="Calc can click substract (using fixture)" time="0.821" classname="can click substract (using fixture)">
+    </testcase>
+    <testcase name="Calc increases the history log" time="0.532" classname="increases the history log">
+    </testcase>
+  </testsuite>
+</testsuites>
