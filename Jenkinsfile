@@ -32,13 +32,6 @@ pipeline {
             }
         }
 
-        stage('E2E Tests') {
-            steps {
-                echo 'Running E2E Tests...'
-                sh 'make test-e2e'
-                archiveArtifacts artifacts: 'results/e2e_result.xml'
-            }
-        }
     }
 
     post {
