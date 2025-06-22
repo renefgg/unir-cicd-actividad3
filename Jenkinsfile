@@ -40,10 +40,5 @@ pipeline {
             cleanWs()
         }
 
-        failure {
-            mail to: 'rene.garcia.garcia@gmail.com',
-                 subject: "Fallo en el pipeline: ${env.JOB_NAME} [${env.BUILD_NUMBER}]",
-                 body: "El trabajo '${env.JOB_NAME}' falló en la ejecución #${env.BUILD_NUMBER}. Revisa Jenkins para más detalles."
-        }
     }
 }
