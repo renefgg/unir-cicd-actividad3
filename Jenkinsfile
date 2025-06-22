@@ -13,6 +13,7 @@ pipeline {
             steps {
                 echo 'Building Docker image...'
                 sh 'make build'
+                sh 'exit 1'
             }
         }
 
@@ -27,7 +28,7 @@ pipeline {
         stage('API Tests') {
             steps {
                 echo 'Running API Tests...'
-                sh 'make test-ap'
+                sh 'make test-api'
                 archiveArtifacts artifacts: 'results/api_result.*ml'
             }
         }
