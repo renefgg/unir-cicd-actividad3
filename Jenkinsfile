@@ -40,9 +40,9 @@ pipeline {
             cleanWs()
         }
         failure {
-            mail to: 'rene.garcia.garcia@gmail.com',
-                 subject: "Fallo en el job: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                 body: "El pipeline ha fallado. Revisa Jenkins: ${env.BUILD_URL}"
+            echo 'mail to: rene.garcia.garcia@gmail.com'
+            echo "subject: Fallo en el job: ${env.JOB_NAME} #${env.BUILD_NUMBER}"
+            echo "body: El pipeline ha fallado. Revisa Jenkins: ${env.BUILD_URL}"
         }
     }
 }
