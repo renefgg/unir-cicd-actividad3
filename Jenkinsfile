@@ -27,7 +27,7 @@ pipeline {
         stage('API Tests') {
             steps {
                 echo 'Running API Tests...'
-                sh 'make test-api'
+                sh 'make test-ap'
                 archiveArtifacts artifacts: 'results/api_result.*ml'
             }
         }
@@ -38,6 +38,10 @@ pipeline {
         always {
             cleanWs()
         }
-
+        failure {
+            mail to: 'rene.garcia.garcia@gmail.com',
+                 subject: "Fallo en el job: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "El pipeline ha fallado. Revisa Jenkins: ${env.BUILD_URL}"
+        }
     }
 }
