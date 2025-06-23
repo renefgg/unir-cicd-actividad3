@@ -45,7 +45,6 @@ pipeline {
 
     post {
         always {
-            cleanWs()
         }
         failure {
             mail to: 'rene.garcia.garciao@gmail.com',
