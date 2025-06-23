@@ -50,7 +50,7 @@ test-e2e-wiremock:
 	docker rm --force calc-web || true
 	docker run -d --rm --name apiwiremock --volume `pwd`/test/wiremock/stubs:/home/wiremock --network calc-test-e2e-wiremock -p 8080:8080 -p 8443:8443 calculator-wiremock
 	docker run -d --rm --volume `pwd`/web:/usr/share/nginx/html --volume `pwd`/web/constants.wiremock.js:/usr/share/nginx/html/constants.js --volume `pwd`/web/nginx.conf:/etc/nginx/conf.d/default.conf --network calc-test-e2e-wiremock --name calc-web -p 80:80 nginx
-	docker run --rm --volume `pwd`/test/e2e/cypress.json:/cypress.json --volume `pwd`/test/e2e/cypress:/cypress --volume `pwd`/results:/results --network calc-test-e2e-wiremock cypress/included:4.9.0 --browser chrome || true
+	docker run --rm --volume `pwd`/test/e2e/cypress.json:/cypress.json --volume `pwd`/test/e2e/cypress:/cypress --volume `pwd`/results:/results -w /cypress --network calc-test-e2e-wiremock cypress/included:4.9.0 --config-file /cypress.json --browser chrome || true
 	docker rm --force apiwiremock
 	docker rm --force calc-web
 	docker run --rm --volume `pwd`:/opt/calc --env PYTHONPATH=/opt/calc -w /opt/calc calculator-app:latest junit2html results/cypress_result.xml results/cypress_result.html
