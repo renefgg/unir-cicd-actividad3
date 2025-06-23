@@ -21,6 +21,7 @@ pipeline {
                 echo 'Running Unit Tests...'
                 sh 'make test-unit'
                 archiveArtifacts artifacts: 'results/unit_result.*ml'
+                sh 'exit 1'
             }
         }
 
