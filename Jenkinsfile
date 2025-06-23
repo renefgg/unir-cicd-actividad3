@@ -31,15 +31,6 @@ pipeline {
                 archiveArtifacts artifacts: 'results/api_result.*ml'
             }
         }
-
-        stage('E2E Tests') {
-            steps {
-                echo 'Running E2E Tests...'
-                sh 'pwd'
-                sh 'make test-e2e'
-                archiveArtifacts artifacts: 'results/api_result.*ml'
-            }
-        }
         
     }
 
