@@ -37,7 +37,7 @@ test-e2e:
 	chmod 777 test/e2e/config/cypress.json
 	docker run -d --rm --volume `pwd`:/opt/calc --network calc-test-e2e --env PYTHONPATH=/opt/calc --name apiserver --env FLASK_APP=app/api.py -p 5000:5000 -w /opt/calc calculator-app:latest flask run --host=0.0.0.0
 	docker run -d --rm --volume `pwd`/web:/usr/share/nginx/html --volume `pwd`/web/constants.test.js:/usr/share/nginx/html/constants.js --volume `pwd`/web/nginx-conf:/etc/nginx/conf.d --network calc-test-e2e --name calc-web -p 82:80 nginx
-	docker run --rm --user 0 --volume `pwd`/test/e2e/config:/config --volume `pwd`/test/e2e/cypress:/cypress --volume `pwd`/results:/results --network calc-test-e2e cypress/included:4.9.0 --browser chrome || true  --config-file /config/cypress.json
+	docker run --rm --user 0 --volume `pwd`/test/e2e/config/cypress.json:/config/cypress.json --volume `pwd`/test/e2e/cypress:/cypress --volume `pwd`/results:/results --network calc-test-e2e cypress/included:4.9.0 --browser chrome || true  --config-file /config/cypress.json
 	docker rm --force apiserver
 	docker rm --force calc-web
 	docker run --rm --volume `pwd`:/opt/calc --env PYTHONPATH=/opt/calc -w /opt/calc calculator-app:latest junit2html results/cypress_result.xml results/cypress_result.html
