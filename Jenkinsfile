@@ -44,8 +44,6 @@ pipeline {
     }
 
     post {
-        always {
-        }
         failure {
             mail to: 'rene.garcia.garciao@gmail.com',
                  subject: "Fallo en el job: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
